@@ -25,7 +25,7 @@ const Schema = magnet.proto.channels(.{
 const Cfg = magnet.Config{ .channels = Schema, .protocol_id = 0= .aead } };
 const Endpoint = magnet.Endpoint(Cfg);
 
-try server.sendTo(client, .updates, .{ .chat = .fromSlice("gg")
+try server.sendTo(client, .updates, .{ .chat = .fromSlice("gg") });
 
 var it = server.receive(.moves);
 while (it.next()) |r| applyMove(r.addr, r.msg);
